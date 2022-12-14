@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+    <main>
+        <div id=profile style="width: 200px">
+        <form>
+            {% if not profile_img %}
+        <img src="{% static 'images/user.png' %}"
+            alt="">
+            {% else %}
+                <img src="{{ profile_img }}" alt="">
+            {% endif %}
+        <p>Name: {{ name }}</p>
+        <P>Email: {{ email }}</P>
+        <p>Art for sale: {{ art_count }}</p>
+        </form>
+        <a href="{% url 'profile edit' pk=user.pk %}">
+            <button>Edit</button>
+        </a>
+        <a href="{% url 'profile delete' pk=user.pk %}">
+            <button>Delete</button>
+        </a>
+     {% csrf_token %}
+        </div>
+    </main>
+
+    <main>
+        <section>
+            <article>
+                <h2>first art</h2>
+                <p>description</p>
+                <img src="https://i0.wp.com/inspiringcity.com/wp-content/uploads/2017/11/img_20171126_170127.jpg?resize=1140%2C1520&ssl=1"
+                    alt="art">
+                <div id="buttons">
+                    <p id="price">price</p>
+                    <a href="#">
+                        <button>
+                            like
+                        </button>
+                    </a>
+                    <a href="#">
+                        <button>
+                            comment
+                        </button>
+                    </a>
+                    <a href="#">
+                        <button>
+                            details
+                        </button>
+                    </a>
+                    <a href="#">
+                        <button>
+                            buy
+                        </button>
+                    </a>
+                </div>
+            </article>
+            <article>
+                <h2>second art</h2>
+                <p>description</p>
+                <img src="https://media.tate.org.uk/aztate-prd-ew-dg-wgtail-st1-ctr-data/images/T15776_9-rachel-jones.width-600.jpg"
+                    alt="">
+                    <div id="buttons">
+                        <p id="price">price</p>
+                        <a href="#">
+                            <button>
+                                like
+                            </button>
+                        </a>
+                        <a href="#">
+                            <button>
+                                comment
+                            </button>
+                        </a>
+                        <a href="#">
+                            <button>
+                                details
+                            </button>
+                        </a>
+                        <a href="#">
+                            <button>
+                                buy
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h2>third art</h2>
+                <p>description</p>
+                <img src="https://media.newyorker.com/photos/629928a77807e09e4011808c/master/w_2560%2Cc_limit/Lewis-Kraus_IsSocialMediaBad_v3.jpg"
+                    alt="art">
+                    <div id="buttons">
+                        <p id="price">price</p>
+                        <a href="#">
+                            <button>
+                                like
+                            </button>
+                        </a>
+                        <a href="#">
+                            <button>
+                                comment
+                            </button>
+                        </a>
+                        <a href="#">
+                            <button>
+                                details
+                            </button>
+                        </a>
+                        <a href="#">
+                            <button>
+                                buy
+                            </button>
+                        </a>
+                    </div>
+            </article>
+        </section>
+
+{% endblock %}

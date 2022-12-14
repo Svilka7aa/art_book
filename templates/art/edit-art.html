@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block page_content %}
+            <form action="../common/index.html">
+                <p>EditPhoto</p>
+                {{ form }}
+                <button>EditArt</button>
+            {% csrf_token %}
+            </form>
+{% endblock %}

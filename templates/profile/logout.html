@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block page_content %}
+        <form id="logout" method="post" action="{% url 'logout user' pk=user.pk%}" style="width: 200px">
+         <p>Are you sure you want to log out?</p>
+            {{ form }}
+            <div>
+                <button>back</button>
+            </div>
+                <button type="submit">LogOut</button>
+            {% csrf_token %}
+        </form>
+{% endblock %}

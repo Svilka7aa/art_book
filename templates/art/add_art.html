@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block page_content %}
+        <form id='addart' method="post" style="width: 150px" action="{% url 'add art' %}">
+            <p>AddArt</p>
+            {{ form }}
+            <button>AddArt</button>
+            {% csrf_token %}
+        </form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block page_content %}
+            <form id='addphoto' method="post" style="width: 245px" action="{% url 'add photo' %}">
+                <p>AddPhoto</p>
+                {{ form }}
+                <button>AddPhoto</button>
+            {% csrf_token %}
+            </form>
+{% endblock %}

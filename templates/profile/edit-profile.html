@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+        <form id="edit-profile" method="post" style="width: 500px" action="{% url 'profile edit' pk=user.pk%}">
+            <p>Edit Profile</p>
+            {{ form }}
+            <button>Edit</button>
+            {% csrf_token %}
+        </form>
+{% endblock %}

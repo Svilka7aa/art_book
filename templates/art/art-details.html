@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <section>
+        <article>
+            <h2>first art</h2>
+            <p>description:
+                this painting was created byt he artist {{ Name }} in the early 19s. its painted with a aquarel paints
+                and it took him almost a decade to finish it
+            </p>
+            <img src="https://i0.wp.com/inspiringcity.com/wp-content/uploads/2017/11/img_20171126_170127.jpg?resize=1140%2C1520&ssl=1"
+                 alt="art">
+            <div id="buttons">
+                <p id="price">price:12000000$</p>
+                <a href="#">
+                    <button>
+                        like
+                    </button>
+                </a>
+                <a href="#">
+                    <button>
+                        comment
+                    </button>
+                </a>
+                <a href="#">
+                    <button>
+                        share
+                    </button>
+                </a>
+                <a href="#">
+                    <button>
+                        buy
+                    </button>
+                </a>
+            </div>
+        </article>
+    </section>
+{% endblock %}

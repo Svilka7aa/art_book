@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block page_content %}
+ <div id="delete-profile">
+        <p>
+            Are you sure you want to delete your profile?
+        </p>
+        <div class="sure-buttons">
+            <form method="post" action="{% url 'profile delete' pk=request.user.pk %}">
+                <button>Yes</button>
+                {% csrf_token %}
+                </form>
+                <a class="edit-btn" href="javascript:history.back()"><button>Back</button></a>
+
+        </div>
+    </div>
+{% endblock %}
