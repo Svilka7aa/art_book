@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
-from art_book.art.forms import ArtCreateForm, ArtEditForm
+from art_book.art.forms import ArtCreateForm, ArtEditForm, ArtDeleteForm
 from art_book.art.models import Art
 from art_book.core.utils import is_owner
 
@@ -60,25 +60,25 @@ def edit_art(request, username, art_slug):
 
 
 def delete_art(request, username, art_slug):
-    pet = get_pet_by_name_and_username(pet_slug, username)
+    art = get_art_by_name_and_username(art_slug, username)
 
     if request.method == 'GET':
-        form = PetDeleteForm(instance=pet)
+        form = ArtDeleteForm(instance=art)
     else:
-        form = PetDeleteForm(request.POST, instance=pet)
+        form = ArtDeleteForm(request.POST, instance=art)
         if form.is_valid():
             form.save()
             return redirect('details user', pk=1)
 
     context = {
         'form': form,
-        'pet_slug': pet_slug,
+        'art_slug': art_slug,
         'username': username,
     }
 
     return render(
         request,
-        'pets/pet-delete-page.html',
+        'art/delete-art.html',
         context,
     )
 
